@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DupeSMP - Official Information Hub & Server Guide</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkslate: '#0B0F17',
+                        cardslate: '#131C2E',
+                        borderglow: '#1E293B',
+                        neonpurple: '#A855F7',
+                        neoncyan: '#06B6D4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0F17;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+        .glow-purple {
+            box-shadow: 0 0 40px -10px rgba(168, 85, 247, 0.35);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.35);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #A855F7 0%, #06B6D4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-grid {
+            background-image: radial-gradient(rgba(168, 85, 247, 0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+
+<body class="bg-darkslate bg-grid min-h-screen flex flex-col justify-between selection:bg-neonpurple selection:text-white">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkslate/80 border-b border-borderglow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-neonpurple to-neoncyan flex items-center justify-center glow-purple flex-shrink-0">
+                    <i class="fa-solid fa-cube text-white text-xl"></i>
+                </div>
+                <span class="text-2xl font-black tracking-wider text-white">DUPE<span class="text-neonpurple">SMP</span></span>
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-300">
+                <a href="#overview" class="hover:text-neoncyan transition-colors">Overview</a>
+                <a href="#rules" class="hover:text-neoncyan transition-colors">Rules & Chat</a>
+                <a href="#mods" class="hover:text-neoncyan transition-colors">Mods & Clients</a>
+                <a href="#medias" class="hover:text-neoncyan transition-colors">Medias Program</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <!-- Prominent Discord Button Visible Immediately -->
+                <a href="https://discord.gg/hJZfSvn4m" target="_blank" rel="noopener noreferrer" class="bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-all shadow-lg flex items-center space-x-2 flex-shrink-0">
+                    <i class="fa-brands fa-discord text-base"></i>
+                    <span class="hidden sm:inline">Discord</span>
+                </a>
+
+                <!-- Live Server Status Badge -->
+                <div id="status-badge" class="hidden sm:flex items-center space-x-2 bg-cardslate border border-borderglow px-3 py-1.5 rounded-full text-xs font-semibold flex-shrink-0">
+                    <span id="status-dot" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span id="status-text" class="text-slate-300">Server Online</span>
+                </div>
+
+                <button onclick="copyText('Dupesmp.faganscr.com', 'IP')" class="bg-gradient-to-r from-neonpurple to-neoncyan hover:opacity-90 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-all shadow-lg glow-purple flex items-center space-x-2 flex-shrink-0">
+                    <i class="fa-solid fa-copy"></i>
+                    <span class="hidden sm:inline">Copy IP</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="relative pt-16 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+            <div class="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none">
+                <div class="w-[500px] h-[500px] bg-neonpurple/10 rounded-full blur-[120px]"></div>
+                <div class="w-[400px] h-[400px] bg-neoncyan/10 rounded-full blur-[120px]"></div>
+            </div>
+
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-cardslate border border-borderglow mb-6 text-xs font-semibold text-neoncyan uppercase tracking-widest shadow-inner">
+                <i class="fa-solid fa-fire text-neonpurple"></i>
+                <span>Official Server for All Ages • Java & Bedrock Supported</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-7xl font-black tracking-tight text-white mb-6">
+                Welcome to <span class="text-gradient">DupeSMP</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-slate-400 mb-10 leading-relaxed">
+                DupeSMP is a Minecraft Server for all ages. Experience absolute freedom, item duplication, base raiding, and survival dominance.
+            </p>
+
+            <!-- Separated Server IP and Port Cards with expanded max-width and robust flex layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-4">
+                <!-- IP Card -->
+                <div class="bg-cardslate border border-borderglow p-5 rounded-2xl glow-cyan flex items-center justify-between shadow-xl">
+                    <div class="flex items-center space-x-3.5 min-w-0 pr-2">
+                        <div class="w-12 h-12 rounded-xl bg-slate-900 border border-borderglow flex items-center justify-center text-neoncyan flex-shrink-0 text-lg">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <div class="text-left min-w-0">
+                            <div class="text-xs text-slate-400 font-medium">Server IP Address</div>
+                            <div class="text-sm sm:text-base font-mono font-bold text-white tracking-wide truncate">Dupesmp.faganscr.com</div>
+                        </div>
+                    </div>
+                    <button onclick="copyText('Dupesmp.faganscr.com', 'IP Address')" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-3 rounded-xl border border-borderglow transition-all flex items-center space-x-2 flex-shrink-0 group">
+                        <span class="text-xs font-semibold text-slate-300">Copy</span>
+                        <i class="fa-solid fa-clipboard text-neoncyan group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Port Card -->
+                <div class="bg-cardslate border border-borderglow p-5 rounded-2xl glow-purple flex items-center justify-between shadow-xl">
+                    <div class="flex items-center space-x-3.5 min-w-0 pr-2">
+                        <div class="w-12 h-12 rounded-xl bg-slate-900 border border-borderglow flex items-center justify-center text-neonpurple flex-shrink-0 text-lg">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <div class="text-left min-w-0">
+                            <div class="text-xs text-slate-400 font-medium">Server Port</div>
+                            <div class="text-sm sm:text-base font-mono font-bold text-white tracking-wide truncate">25565</div>
+                        </div>
+                    </div>
+                    <button onclick="copyText('25565', 'Port')" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-3 rounded-xl border border-borderglow transition-all flex items-center space-x-2 flex-shrink-0 group">
+                        <span class="text-xs font-semibold text-slate-300">Copy</span>
+                        <i class="fa-solid fa-clipboard text-neonpurple group-hover:scale-110 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="overview" class="py-16 bg-slate-900/40 border-y border-borderglow backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Quick Links & Hub</h2>
+                    <p class="text-slate-400 max-w-xl mx-auto">Connect with our community across all official platforms.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <a href="https://discord.gg/hJZfSvn4m" target="_blank" rel="noopener noreferrer" class="bg-cardslate border border-borderglow p-6 rounded-2xl hover:border-[#5865F2] transition-all flex items-center space-x-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-[#5865F2]/10 text-[#5865F2] flex items-center justify-center text-2xl group-hover:scale-110 transition-transform flex-shrink-0">
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold">Discord Server</h3>
+                            <p class="text-xs text-slate-400">Join community & chats</p>
+                        </div>
+                    </a>
+
+                    <!-- Fixed Twitter / X Link with Inline SVG -->
+                    <a href="https://x.com/DupeSMP" target="_blank" rel="noopener noreferrer" class="bg-cardslate border border-borderglow p-6 rounded-2xl hover:border-cyan-400 transition-all flex items-center space-x-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-400/10 text-cyan-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform flex-shrink-0">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold">Twitter / X</h3>
+                            <p class="text-xs text-slate-400">Updates & announcements</p>
+                        </div>
+                    </a>
+
+                    <div class="bg-cardslate border border-borderglow p-6 rounded-2xl hover:border-red-500 transition-all flex items-center space-x-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform flex-shrink-0">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold">ZaneCPVP</h3>
+                            <p class="text-xs text-slate-400">Featured Creator [HNNR]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rules" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Server & Community Rules</h2>
+                <p class="text-slate-400">Please review all rules carefully to avoid blacklists and punishments.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <!-- General Discord Rules -->
+                <div class="bg-cardslate border border-borderglow p-8 rounded-3xl">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-neonpurple/10 text-neonpurple flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-shield-cat"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">General Discord Rules</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-300 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-exclamation text-neoncyan mt-1 flex-shrink-0"></i>
+                            <span>You must be <strong>13+</strong> to be in the main Discord server!</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-exclamation text-neoncyan mt-1 flex-shrink-0"></i>
+                            <span>If you attempt to raid the Discord server, you will be reported by our staff members & you will be <strong>permanently blacklisted</strong> from the main Discord & Minecraft server.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-exclamation text-neoncyan mt-1 flex-shrink-0"></i>
+                            <span>If you are caught bringing our members of the community off the platform of Discord for other actions, we will get <strong>Discord & law enforcement</strong> involved.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-circle-exclamation text-neoncyan mt-1 flex-shrink-0"></i>
+                            <span>Respect all <strong>Staff & Community Members</strong>.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Discord Chat Rules -->
+                <div class="bg-cardslate border border-borderglow p-8 rounded-3xl">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-neoncyan/10 text-neoncyan flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Discord Chat Rules</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-300 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400 mt-1 flex-shrink-0"></i>
+                            <span>Do not use the term <strong>@ everyone</strong> or <strong>@ here</strong> or you <strong>WILL</strong> be blacklisted.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400 mt-1 flex-shrink-0"></i>
+                            <span>Make sure to double-check <strong>ALL messages</strong> before you send them; it may result in an instant blacklist if <strong>NSFW content</strong> is found within that message.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400 mt-1 flex-shrink-0"></i>
+                            <span>All chats should not contain <strong>Racism | NSFW Content | Harassing | Bullying</strong>. If your chat contains this content, you <strong>WILL</strong> be blacklisted.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400 mt-1 flex-shrink-0"></i>
+                            <span>Curse words <strong>ARE ALLOWED</strong> under the agreement that they will <strong>NOT</strong> be used towards someone.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400 mt-1 flex-shrink-0"></i>
+                            <span>Bypassing chat filters will be an <strong>INSTANT blacklist</strong> from both Minecraft and Discord Server.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400 mt-1 flex-shrink-0"></i>
+                            <span>Refrain from typing anything to troll a Mod/Admin in tickets and/or chat while they are asking questions in chat or tickets.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-cardslate border border-borderglow p-8 rounded-3xl">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">DupeSMP Server Rules</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-slate-300 text-sm">
+                    <div class="bg-slate-900/50 p-5 rounded-2xl border border-borderglow">
+                        <div class="font-bold text-white mb-2 flex items-center space-x-2">
+                            <i class="fa-solid fa-terminal text-neonpurple"></i>
+                            <span>In-Game Command</span>
+                        </div>
+                        <p class="text-slate-400">Check out rules in the main Minecraft server with <code class="text-neoncyan font-mono bg-slate-800 px-1.5 py-0.5 rounded">/rules</code>.</p>
+                    </div>
+
+                    <div class="bg-slate-900/50 p-5 rounded-2xl border border-borderglow">
+                        <div class="font-bold text-white mb-2 flex items-center space-x-2">
+                            <i class="fa-solid fa-ban text-red-400"></i>
+                            <span>DDOS Protection</span>
+                        </div>
+                        <p class="text-slate-400">If you attempt to DDOS the server, your IP will be <strong>permanently blacklisted</strong> from the DupeSMP Discord & Minecraft server.</p>
+                    </div>
+
+                    <div class="bg-slate-900/50 p-5 rounded-2xl border border-borderglow">
+                        <div class="font-bold text-white mb-2 flex items-center space-x-2">
+                            <i class="fa-solid fa-comment-slash text-amber-400"></i>
+                            <span>Global Chat</span>
+                        </div>
+                        <p class="text-slate-400">Do not type inappropriate sentences in the DupeSMP Global Chat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mods" class="py-20 bg-slate-900/40 border-t border-borderglow">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Allowed & Blacklisted Modifications</h2>
+                    <p class="text-slate-400 max-w-xl mx-auto">Verify your client and mods before joining the server to avoid punishments.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Blacklisted Mods & Clients -->
+                    <div class="bg-cardslate border border-red-500/30 p-8 rounded-3xl">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Blacklisted Modifications</h3>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">If you are caught using blacklisted modifications, you <strong>MIGHT</strong> receive a punishment.</p>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div class="bg-slate-900/60 p-4 rounded-xl border border-borderglow">
+                                <div class="font-bold text-red-400 mb-1">Examples (NOT Allowed):</div>
+                                <ul class="list-disc list-inside text-slate-300 space-y-1">
+                                    <li>Accurate Block Placement</li>
+                                    <li>Any Minimap mods</li>
+                                    <li>Anchor Optimizers</li>
+                                    <li>Health Indicators</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-slate-900/60 p-4 rounded-xl border border-borderglow">
+                                <div class="font-bold text-red-400 mb-1">Blacklisted Clients:</div>
+                                <ul class="list-disc list-inside text-slate-300 space-y-1">
+                                    <li>Meteor Client</li>
+                                    <li>Krypton Client</li>
+                                    <li>Autism Client</li>
+                                    <li>Worst Client</li>
+                                    <li>And more...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Allowed Mods & Clients -->
+                    <div class="bg-cardslate border border-emerald-500/30 p-8 rounded-3xl">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Allowed Modifications</h3>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">These performance and utility mods/clients are fully permitted.</p>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div class="bg-slate-900/60 p-4 rounded-xl border border-borderglow">
+                                <div class="font-bold text-emerald-400 mb-1">Examples (ARE Allowed):</div>
+                                <ul class="list-disc list-inside text-slate-300 space-y-1">
+                                    <li>Marlow's Crystal Optimizer</li>
+                                    <li>Better f4 or Better pie chart</li>
+                                    <li>Better Name Tags</li>
+                                    <li>Enhanced Nametags</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-slate-900/60 p-4 rounded-xl border border-borderglow">
+                                <div class="font-bold text-emerald-400 mb-1">Un-Blacklisted Clients:</div>
+                                <ul class="list-disc list-inside text-slate-300 space-y-1">
+                                    <li>Dawn Client</li>
+                                    <li>Feather Client</li>
+                                    <li>Lunar Client</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="medias" class="py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-cardslate to-slate-900 border border-borderglow p-8 sm:p-12 rounded-3xl text-center relative overflow-hidden shadow-2xl">
+                <div class="absolute -right-16 -top-16 w-64 h-64 bg-neonpurple/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="w-16 h-16 rounded-2xl bg-neonpurple/10 text-neonpurple flex items-center justify-center text-3xl mx-auto mb-6 glow-purple">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl font-black text-white mb-4">Medias</h2>
+                
+                <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+                    We have neglected medias a lot, so we are going to start paying medias if they agree to the <span onclick="openMediaModal()" class="text-neoncyan font-semibold underline decoration-neoncyan/50 decoration-2 cursor-pointer hover:text-white transition-colors">Media TOS</span>.
+                </p>
+
+                <!-- Highlighted Media TOS Button -->
+                <button onclick="openMediaModal()" class="inline-flex items-center space-x-3 bg-gradient-to-r from-neonpurple to-neoncyan hover:opacity-90 text-white font-bold px-8 py-4 rounded-2xl text-base transition-all shadow-xl glow-purple transform hover:scale-105">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <span>View Media TOS & Payment Details</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-darkslate border-t border-borderglow py-12 text-center text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                <span class="text-white font-bold tracking-wider">DUPE<span class="text-neonpurple">SMP</span></span>
+                <span class="text-slate-400 font-semibold italic">Please follow all rules or you might have a chance at getting black listed. Sincerely @Founder [👑]</span>
+            </div>
+            <div class="flex space-x-6 text-slate-400">
+                <a href="https://discord.gg/hJZfSvn4m" target="_blank" rel="noopener noreferrer" class="hover:text-neoncyan transition-colors"><i class="fa-brands fa-discord text-lg"></i></a>
+                <a href="https://x.com/DupeSMP" target="_blank" rel="noopener noreferrer" class="hover:text-neoncyan transition-colors">
+                    <svg class="w-4 h-4 fill-current inline" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="hover:text-neoncyan transition-colors"><i class="fa-brands fa-youtube text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Media TOS Modal -->
+    <div id="media-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-cardslate border border-borderglow max-w-xl w-full p-8 rounded-3xl shadow-2xl relative transform scale-95 transition-all duration-300" id="modal-content">
+            <button onclick="closeMediaModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-neoncyan/10 text-neoncyan flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white">Media TOS & Payout Program</h3>
+            </div>
+
+            <div class="space-y-4 text-slate-300 text-sm max-h-[60vh] overflow-y-auto pr-2">
+                <p>Welcome to the DupeSMP Media Program. As part of our initiative to reward content creators (such as featured YouTuber <strong>ZaneCPVP</strong> [HNNR]), approved creators will receive consistent compensation for quality video coverage and streams.</p>
+                
+                <div class="bg-slate-900/60 p-4 rounded-xl border border-borderglow space-y-2">
+                    <div class="font-bold text-white">Store Credit Payouts:</div>
+                    <ul class="list-disc list-inside space-y-1 text-slate-300">
+                        <li>Media creators will get paid via <strong>in-store credit</strong> for the DupeSMP Store.</li>
+                        <li>Store credit can be redeemed for store ranks, items, perks, crate keys, and exclusive in-game rewards.</li>
+                        <li>Payout amounts scale based on view counts, engagement, and subscriber tiers.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-900/60 p-4 rounded-xl border border-borderglow space-y-2">
+                    <div class="font-bold text-white">Media Terms & Requirements:</div>
+                    <ul class="list-disc list-inside space-y-1 text-slate-300">
+                        <li>Must include server IP <code class="text-neoncyan font-mono">Dupesmp.faganscr.com</code> and port <code class="text-neoncyan font-mono">25565</code> in video/stream descriptions.</li>
+                        <li>Videos must adhere to server age-appropriate community standards.</li>
+                        <li>To apply, open a media ticket in our official Discord server.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <button onclick="closeMediaModal()" class="bg-gradient-to-r from-neonpurple to-neoncyan text-white font-bold px-6 py-2.5 rounded-xl text-sm shadow-lg hover:opacity-90 transition-all">
+                    I Understand & Agree
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-cardslate border border-borderglow text-white px-6 py-3 rounded-xl shadow-2xl flex items-center space-x-3 transform translate-y-24 opacity-0 transition-all duration-300 z-50">
+        <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <div id="toast-title" class="text-sm font-bold">Copied to Clipboard!</div>
+            <div id="toast-desc" class="text-xs text-slate-400">Ready to paste into Minecraft.</div>
+        </div>
+    </div>
+
+    <script>
+        function copyText(text, label) {
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast(label + " Copied!", text);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function showToast(title, desc) {
+            const toast = document.getElementById("toast");
+            document.getElementById("toast-title").textContent = title;
+            document.getElementById("toast-desc").textContent = desc;
+            toast.classList.remove("translate-y-24", "opacity-0");
+            setTimeout(() => {
+                toast.classList.add("translate-y-24", "opacity-0");
+            }, 3000);
+        }
+
+        function openMediaModal() {
+            const modal = document.getElementById("media-modal");
+            const content = document.getElementById("modal-content");
+            modal.classList.remove("opacity-0", "pointer-events-none");
+            content.classList.remove("scale-95");
+        }
+
+        function closeMediaModal() {
+            const modal = document.getElementById("media-modal");
+            const content = document.getElementById("modal-content");
+            modal.classList.add("opacity-0", "pointer-events-none");
+            content.classList.add("scale-95");
+        }
+
+        // Live Server Status & Restart Check
+        // Checks if even hours (0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22) and minutes < 5
+        function updateServerStatus() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+
+            const isEvenHour = (hours % 2 === 0);
+            const isRestartingWindow = isEvenHour && (minutes < 5);
+
+            const statusDot = document.getElementById("status-dot");
+            const statusText = document.getElementById("status-text");
+
+            if (statusDot && statusText) {
+                if (isRestartingWindow) {
+                    const remainingMins = 4 - minutes;
+                    const remainingSecs = 59 - now.getSeconds();
+                    const formattedSecs = remainingSecs < 10 ? '0' + remainingSecs : remainingSecs;
+                    statusDot.className = "w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping";
+                    statusText.textContent = `Server Restarting (${remainingMins}:${formattedSecs})`;
+                } else {
+                    statusDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
+                    statusText.textContent = "Server Online";
+                }
+            }
+        }
+
+        updateServerStatus();
+        setInterval(updateServerStatus, 1000);
+    </script>
+</body>
+</html>
